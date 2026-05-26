@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<interface>
+    <object class="GtkMenu" id="menu">
+        <child>
+            <object class="GtkMenuItem" id="config">
+                <property name="label">Open Config</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="style">
+                <property name="label">Open Style</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="hyprland">
+                <property name="label">Open Hyprland</property>
+            </object>
+        </child>
+        <child>
+            <object class="GtkMenuItem" id="configdir">
+                <property name="label">Open .config</property>
+            </object>
+        </child>
+    </object>
+</interface>
