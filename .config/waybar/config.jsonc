@@ -21,7 +21,7 @@
       "hyprland/language",
       "bluetooth",
       "network",
-      "custom/openvpn",
+      "custom/vpn",
       "memory",
       "cpu",
       "pulseaudio",
@@ -100,13 +100,12 @@
       "interval": 5,
       "_inverted": false,
     },
-    "custom/openvpn": {
-      "exec": "~/.local/bin/openvpn3-waybar-status",
+    "custom/vpn": {
+      "exec": "~/.local/bin/waybar-vpn",
+      "interval": 2,
       "return-type": "json",
-      "format": "{}",
-      "interval": 5,
-      "on-click": "kitty --class floating-terminal -e openvpn3-tui", // or your preferred launcher
-      "tooltip": true,
+      "on-click": "kitty -e ~/.local/bin/vpn-manager-single",
+      "tooltip": true
     },
     "bluetooth": {
       "format": "󰂯",

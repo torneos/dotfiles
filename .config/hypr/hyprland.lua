@@ -1,28 +1,9 @@
-local colorhyp = require("noctalia/noctalia-colors")
-
 --[[
 ▗▖  ▗▖ ▗▄▖ ▗▖  ▗▖▗▄▄▄▖▗▄▄▄▖▗▄▖ ▗▄▄▖  ▗▄▄▖
 ▐▛▚▞▜▌▐▌ ▐▌▐▛▚▖▐▌  █    █ ▐▌ ▐▌▐▌ ▐▌▐▌
 ▐▌  ▐▌▐▌ ▐▌▐▌ ▝▜▌  █    █ ▐▌ ▐▌▐▛▀▚▖ ▝▀▚▖
 ▐▌  ▐▌▝▚▄▞▘▐▌  ▐▌▗▄█▄▖  █ ▝▚▄▞▘▐▌ ▐▌▗▄▄▞▘
 --]]
---
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
-hl.monitor({
-    output   = "DP-1",
-    mode     = "3440x1440@165",
-    position = "0x0",
-    scale    = "1",
-})
-
--- hl.monitor({ output = "HD-1", mode = "3440х1440", position = "3440x0", scale = "1" })
-
--- hl.monitor({
---     output = "HEADLESS-2",
---     mode = "2880x1864@60",
---     position = "3440x0",
---     scale = "1",
--- })
 
 --[[
 ▗▄▄▖ ▗▄▄▖  ▗▄▖  ▗▄▄▖▗▄▄▖  ▗▄▖ ▗▖  ▗▖ ▗▄▄▖
@@ -30,12 +11,10 @@ hl.monitor({
 ▐▛▀▘ ▐▛▀▚▖▐▌ ▐▌▐▌▝▜▌▐▛▀▚▖▐▛▀▜▌▐▌  ▐▌ ▝▀▚▖
 ▐▌   ▐▌ ▐▌▝▚▄▞▘▝▚▄▞▘▐▌ ▐▌▐▌ ▐▌▐▌  ▐▌▗▄▄▞▘
 --]]
-local ipc         = "qs -c noctalia-shell ipc call "
--- Set programs that you use
+
 local terminal    = "kitty"
 local fileManager = "nautilus"
 local menu        = "vicinae toggle"
-
 
 --[[
  ▗▄▖ ▗▖ ▗▖▗▄▄▄▖▗▄▖  ▗▄▄▖▗▄▄▄▖▗▄▖ ▗▄▄▖▗▄▄▄▖
@@ -44,36 +23,12 @@ local menu        = "vicinae toggle"
 ▐▌ ▐▌▝▚▄▞▘  █ ▝▚▄▞▘▗▄▄▞▘  █ ▐▌ ▐▌▐▌ ▐▌ █
 --]]
 
--- See https://wiki.hypr.land/Configuring/Basics/Autostart/
-
--- Autostart necessary processes (like notifications daemons, status bars, etc.)
--- Or execute your favorite apps at launch like this:
---
-hl.on("hyprland.start", function()
-    -- hl.exec_cmd(panel)
-    -- hl.exec_cmd("qs -c noctalia-shell")
-    -- hl.exec_cmd("qs -c tormshell")
-    hl.exec_cmd("vicinae server")
-    -- hl.exec_cmd("noctalia --daemon")
-    hl.exec_cmd("awww-daemon")
-    hl.exec_cmd("swaync")
-    -- hl.exec_cmd("waybar & hyprpaper & firefox")
-end)
-
-
 --[[
 ▗▖  ▗▖ ▗▄▖ ▗▄▄▖ ▗▄▄▄▖ ▗▄▖ ▗▄▄▖ ▗▖   ▗▄▄▄▖ ▗▄▄▖
 ▐▌  ▐▌▐▌ ▐▌▐▌ ▐▌  █  ▐▌ ▐▌▐▌ ▐▌▐▌   ▐▌   ▐▌
 ▐▌  ▐▌▐▛▀▜▌▐▛▀▚▖  █  ▐▛▀▜▌▐▛▀▚▖▐▌   ▐▛▀▀▘ ▝▀▚▖
  ▝▚▞▘ ▐▌ ▐▌▐▌ ▐▌▗▄█▄▖▐▌ ▐▌▐▙▄▞▘▐▙▄▄▖▐▙▄▄▖▗▄▄▞▘
 --]]
-
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
-
-hl.env("XCURSOR_SIZE", "24")
-hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("XCURSOR_THEME","Bibata-Modern-Ice")
-
 
 --[[
 ▗▄▄▖ ▗▄▄▄▖▗▄▄▖ ▗▖  ▗▖▗▄▄▄▖ ▗▄▄▖ ▗▄▄▖▗▄▄▄▖ ▗▄▖ ▗▖  ▗▖ ▗▄▄▖
@@ -104,141 +59,12 @@ hl.env("XCURSOR_THEME","Bibata-Modern-Ice")
 ▐▙▄▄▖▝▚▄▞▘▝▚▄▞▘▐▌ ▐▌    ▐▌ ▐▌▐▌  ▐▌▐▙▄▄▀     ▐▌   ▐▙▄▄▖▐▙▄▄▖▐▙▄▄▖
 --]]
 
--- Refer to https://wiki.hypr.land/Configuring/Basics/Variables/
-hl.config({
-    general = {
-        gaps_in          = 5,
-        gaps_out         = 10,
-
-        border_size      = 2,
-
-        col              = {
-            active_border   = { colors = { "rgba(" .. colorhyp.primary:gsub("#", "") .. "ee)", "rgba(" .. colorhyp.secondary:gsub("#", "") .. "ee)" }, angle = 45 },
-            inactive_border = "rgba(" .. colorhyp.surface_lowest:gsub("#", "") .. "aa)",
-            -- active_border   = "rgba(" .. colors.accent:gsub("#", "") .. "ee)",
-            -- inactive_border = "rgba(" .. colors.inactive:gsub("#", "") .. "aa)",
-
-        },
-
-        -- Set to true to enable resizing windows by clicking and dragging on borders and gaps
-        resize_on_border = false,
-
-        -- Please see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Tearing/ before you turn this on
-        allow_tearing    = false,
-
-        layout           = "dwindle",
-    },
-
-    decoration = {
-        rounding         = 10,
-        rounding_power   = 0,
-
-        -- Change transparency of focused and unfocused windows
-        active_opacity   = 1.0,
-        inactive_opacity = 1.0,
-
-        shadow           = {
-            enabled      = true,
-            range        = 4,
-            render_power = 3,
-            color        = 0x4e1a1a1a,
-        },
-
-        blur             = {
-            enabled  = true,
-            size     = 3,
-            passes   = 2,
-            vibrancy = 0.1696,
-        },
-    },
-
-    animations = {
-        enabled = true,
-    },
-})
-
--- Default curves and animations, see https://wiki.hypr.land/Configuring/Advanced-and-Cool/Animations/
-hl.curve("easeOutQuint", { type = "bezier", points = { { 0.23, 1 }, { 0.32, 1 } } })
-hl.curve("easeInOutCubic", { type = "bezier", points = { { 0.65, 0.05 }, { 0.36, 1 } } })
-hl.curve("linear", { type = "bezier", points = { { 0, 0 }, { 1, 1 } } })
-hl.curve("almostLinear", { type = "bezier", points = { { 0.5, 0.5 }, { 0.75, 1 } } })
-hl.curve("quick", { type = "bezier", points = { { 0.15, 0 }, { 0.1, 1 } } })
-
--- Default springs
-hl.curve("easy", { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
-
-hl.animation({ leaf = "global", enabled = true, speed = 10, bezier = "default" })
-hl.animation({ leaf = "border", enabled = true, speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows", enabled = true, speed = 4.79, spring = "easy" })
-hl.animation({ leaf = "windowsIn", enabled = true, speed = 4.1, spring = "easy", style = "popin 87%" })
-hl.animation({ leaf = "windowsOut", enabled = true, speed = 1.49, bezier = "linear", style = "popin 87%" })
-hl.animation({ leaf = "fadeIn", enabled = true, speed = 1.73, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeOut", enabled = true, speed = 1.46, bezier = "almostLinear" })
-hl.animation({ leaf = "fade", enabled = true, speed = 3.03, bezier = "quick" })
-hl.animation({ leaf = "layers", enabled = true, speed = 3.81, bezier = "easeOutQuint" })
-hl.animation({ leaf = "layersIn", enabled = true, speed = 4, bezier = "easeOutQuint", style = "fade" })
-hl.animation({ leaf = "layersOut", enabled = true, speed = 1.5, bezier = "linear", style = "fade" })
-hl.animation({ leaf = "fadeLayersIn", enabled = true, speed = 1.79, bezier = "almostLinear" })
-hl.animation({ leaf = "fadeLayersOut", enabled = true, speed = 1.39, bezier = "almostLinear" })
-hl.animation({ leaf = "workspaces", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesIn", enabled = true, speed = 1.21, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "workspacesOut", enabled = true, speed = 1.94, bezier = "almostLinear", style = "fade" })
-hl.animation({ leaf = "zoomFactor", enabled = true, speed = 7, bezier = "quick" })
-
--- Ref https://wiki.hypr.land/Configuring/Basics/Workspace-Rules/
--- "Smart gaps" / "No gaps when only"
--- uncomment all if you wish to use that.
--- hl.workspace_rule({ workspace = "w[tv1]", gaps_out = 0, gaps_in = 0 })
--- hl.workspace_rule({ workspace = "f[1]",   gaps_out = 0, gaps_in = 0 })
--- hl.window_rule({
---     name  = "no-gaps-wtv1",
---     match = { float = false, workspace = "w[tv1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
--- hl.window_rule({
---     name  = "no-gaps-f1",
---     match = { float = false, workspace = "f[1]" },
---     border_size = 0,
---     rounding    = 0,
--- })
-
--- See https://wiki.hypr.land/Configuring/Layouts/Dwindle-Layout/ for more
-hl.config({
-    dwindle = {
-        preserve_split = true, -- You probably want this
-    },
-})
-
--- See https://wiki.hypr.land/Configuring/Layouts/Master-Layout/ for more
-hl.config({
-    master = {
-        new_status = "master",
-    },
-})
-
--- See https://wiki.hypr.land/Configuring/Layouts/Scrolling-Layout/ for more
-hl.config({
-    scrolling = {
-        fullscreen_on_one_column = true,
-    },
-})
-
 --[[
 ▗▖  ▗▖▗▄▄▄▖ ▗▄▄▖ ▗▄▄▖
 ▐▛▚▞▜▌  █  ▐▌   ▐▌
 ▐▌  ▐▌  █   ▝▀▚▖▐▌
 ▐▌  ▐▌▗▄█▄▖▗▄▄▞▘▝▚▄▄▖
 --]]
-
-
-hl.config({
-    misc = {
-        force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
-    },
-})
-
 
 --[[
 ▗▄▄▄▖▗▖  ▗▖▗▄▄▖ ▗▖ ▗▖▗▄▄▄▖
@@ -249,35 +75,13 @@ hl.config({
 
 hl.config({
     input = {
-        kb_layout    = "us,ru",
-        kb_variant   = "",
-        kb_model     = "",
-        kb_options   = "grp:alt_shift_toggle",
-        kb_rules     = "",
-
-        follow_mouse = 1,
-
-        sensitivity  = 0, -- -1.0 - 1.0, 0 means no modification.
-
-        touchpad     = {
-            natural_scroll = false,
-        },
+        kb_layout  = "us,ru",
+        kb_variant = "",
+        kb_model   = "",
+        kb_options = "grp:alt_shift_toggle",
+        kb_rules   = "",
     },
 })
-
-hl.gesture({
-    fingers = 3,
-    direction = "horizontal",
-    action = "workspace"
-})
-
--- Example per-device config
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Devices/ for more
-hl.device({
-    name        = "asustek-rog-chakram-x",
-    sensitivity = -0.7,
-})
-
 
 --[[
 ▗▖ ▗▖▗▄▄▄▖▗▖  ▗▖▗▄▄▖ ▗▄▄▄▖▗▖  ▗▖▗▄▄▄   ▗▄▄▖
@@ -294,9 +98,6 @@ local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 
 hl.bind(mainMod .. " + A", hl.dsp.exec_cmd("systemctl --user restart waybar"))
-hl.bind(mainMod .. " + period", hl.dsp.exec_cmd(ipc .. "controlCenter toggle"))
-hl.bind(mainMod .. " + comma", hl.dsp.exec_cmd(ipc .. "settings toggle"))
-hl.bind(mainMod .. " + tab", hl.dsp.exec_cmd(ipc .. "plugin:workspace-overview toggle"))
 
 hl.bind(mainMod .. " + M",
     hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
@@ -390,7 +191,6 @@ hl.window_rule({
     float = true,
 })
 
-
 hl.layer_rule {
     name = "noctalia",
     match = { namespace = "noctalia-background-.*$" },
@@ -399,15 +199,8 @@ hl.layer_rule {
     blur_popups = true,
 }
 
-hl.layer_rule {
-    name = "rofi",
-    match = { namespace = "rofi" },
-    ignore_alpha = 0.1,
-    blur = true,
-    blur_popups = true,
-    xray = true,
-}
+-- HyprMod managed settings
+require("hyprland-gui")
 
-hl.window_rule({ name = "yad", match = { class = "yad" }, float = true })
--- hl.window_rule({ name = "Nautilus", match = { class = "org.gnome.Nautilus" }, float = true })
-hl.window_rule({ name = "Sushi", match = { class = "org.gnome.NautilusPreviewer" }, float = true })
+-- For Noctalia Color templates
+require("noctalia")

@@ -269,3 +269,25 @@ menuitem:hover {
     /*border-left: 3px solid @red;*/
     /*border-left-width: 0.5px;*/
 }
+
+
+
+
+
+
+#custom-vpn {
+    padding: 0 10px;
+    margin: 0 4px;
+    /* border-radius: 8px; */
+    /* font-weight: bold; */
+}
+
+#custom-vpn.connected {
+    color: #a6e3a1;
+    /* background: rgba(166, 227, 161, 0.15); */
+}
+
+#custom-vpn.disconnected {
+    color: #f38ba8;
+    /* background: rgba(243, 139, 168, 0.15); */
+}
